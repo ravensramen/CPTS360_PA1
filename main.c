@@ -9,7 +9,7 @@
 
 int main(void) {
 
-    printf("Testing modularization of files");
+    printf("Welcome to the List Manager program!");
 
     IntList list;
     int choice;
@@ -21,7 +21,7 @@ int main(void) {
 
     do {
         printMenu();
-        printf("Enter choice: ");
+        printf("Enter choice to continue: ");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -31,6 +31,9 @@ int main(void) {
                 result = insertEnd(&list, value);
                 if (result == -1) {
                     printf("List is full.\n");
+                }
+                else if(result == 1){
+                    printf("Item successfully entered in list.");
                 }
                 break;
 
@@ -70,7 +73,7 @@ int main(void) {
                 break;
 
             case 0:
-                printf("Exiting program.\n");
+                printf("Exiting program... Thank you!\n");
                 break;
 
             default:

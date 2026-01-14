@@ -10,6 +10,7 @@ typedef struct {
     int size;
 } IntList;
 
+
 /* Function prototypes */
 void initList(IntList *list);
 int insertEnd(IntList *list, int value);

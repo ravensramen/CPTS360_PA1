@@ -2,17 +2,22 @@
 
 /* Initializes the list */
 void initList(IntList *list) {
-    /* TODO: Set list size to 0 */
+    list->size = 0; //Set list size to 0, indicates empty
+    printf("Your list is initialized.");
 }
 
 /* Inserts a value at the end of the list */
 int insertEnd(IntList *list, int value) {
-    /* TODO:
-     * 1. Check if list is full
-     * 2. Insert value at the end
-     * 3. Update size
-     */
-    return -1;  /* placeholder */
+
+    if (list->size >= MAX_SIZE){ //if list is already at max size
+        return -1; //return -1, indicates failed insertion
+    }
+     
+    else{ //the size indicates the indice of the last item, assign to value
+        list->data[list->size] = value;
+        list->size++; //increment size
+        return 1; //item successfully entered at end of list
+    }
 }
 
 /* Inserts a value at a specific index */
