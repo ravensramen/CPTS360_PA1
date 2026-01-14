@@ -2,7 +2,13 @@
 
 /* Initializes the list */
 void initList(IntList *list) {
-    list->size = 0; //Set list size to 0, indicates empty
+    list->size = 0; //Set list size to 0, indicates empty/0
+
+    //explicitly set each index as 0 (otherwise may populate with garbage values)
+    for(int i =0; i<MAX_SIZE; i++){
+        list->data[i]= 0;
+    }
+
     printf("Your list is initialized.");
 }
 

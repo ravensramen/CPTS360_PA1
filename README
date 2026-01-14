@@ -2,6 +2,8 @@ Compilation Instructions:
 Navigate to program files, create an executable with gcc and all .c files. Run
 executable with "./" command in terminal. 
 
+"gcc -g functions.c main.c -o myproject"
+
 Assumptions:
 
 Input and Output Examples:
