@@ -28,39 +28,57 @@ int insertEnd(IntList *list, int value) {
 
 /* Inserts a value at a specific index */
 int insertAt(IntList *list, int index, int value) {
-    /* TODO:
-     * 1. Validate index
-     * 2. Shift elements to the right
-     * 3. Insert value
-     * 4. Update size
-     */
-    return -1;  /* placeholder */
+    int i = 0;
+    //validate index
+     if (list->size >= MAX_SIZE || index<0 || index > list->size){
+        return -1; //indicate invalid index
+     }
+
+    //shift all elements to the right until insertion index reached
+    for(i = list->size; i> index; i--){
+        list->data[i] = list->data[i-1];
+     }
+
+    list->data[index] = value; //insert value
+    list->size++; //update size
+
+    return 1; //indicate successful insertion
 }
 
 /* Removes the element at a specific index */
 int removeAt(IntList *list, int index) {
-    /* TODO:
-     * 1. Validate index
-     * 2. Shift elements to the left
-     * 3. Update size
-     */
-    return -1;  /* placeholder */
+
+    if (index>list->size || list->data[index] == 0){ //detect invalid index or already empty index
+        return -1; //indicate failed deletion
+    }
+    for(int i = index; i< list->size; i++){ //iterate through list and shift items after deletion to left
+        list->data[i] = list->data[i+1];
+    }
+    list->size--;
+    return 1; //indicate successful deletion
 }
 
 /* Searches for a value and returns its index or -1 */
 int search(const IntList *list, int value) {
-    /* TODO:
-     * Perform a linear search
-     */
-    return -1;  /* placeholder */
+
+    for(int i = 0; i<list->size; i++){ //iterate through entire list
+        if (list->data[i] == value){
+            return i; //if target value found, return it's index
+        }
+    }
+    return -1;  //indicate item was never found in linear search
 }
 
 /* Prints all elements in the list */
 void printList(const IntList *list) {
-    /* TODO:
-     * Print elements in order
-     * Handle empty list
-     */
+    if (list->size == 0){ //empty case
+        printf("List is empty, nothing to print here!");
+        return; //early return
+    } 
+    printf("Here are the contents of your list: \n");
+    for(int i =0; i< list->size; i++){ //iterate through the entire list
+        printf("%d, ", list->data[i]); 
+    }
 }
 
 /* Prints the menu options */

@@ -2,16 +2,8 @@ Compilation Instructions:
 Navigate to program files, create an executable with gcc and all .c files. Run
 executable with "./" command in terminal. 
 
-"gcc -g functions.c main.c -o myproject"
+gcc -Wall -Wextra -std=c99 functions.c main.c -o myproject
 
 Assumptions:
 
 Input and Output Examples:
-
-//TO-DO:
-void initList(IntList *list);
-int insertEnd(IntList *list, int value);
-int insertAt(IntList *list, int index, int value);
-int removeAt(IntList *list, int index);
-int search(const IntList *list, int value);
-void printList(const IntList *list);

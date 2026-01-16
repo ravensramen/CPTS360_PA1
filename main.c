@@ -46,6 +46,9 @@ int main(void) {
                 if (result == -1) {
                     printf("Invalid index or list is full.\n");
                 }
+                else if(result == 1){
+                    printf("Insertion successful. \n");
+                }
                 break;
 
             case 3:
@@ -54,6 +57,9 @@ int main(void) {
                 result = removeAt(&list, index);
                 if (result == -1) {
                     printf("Invalid index.\n");
+                }
+                else if(result == 1){
+                    printf("Successful removal. \n");
                 }
                 break;
 
