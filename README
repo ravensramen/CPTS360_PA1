@@ -5,5 +5,20 @@ executable with "./" command in terminal.
 gcc -Wall -Wextra -std=c99 functions.c main.c -o myproject
 
 Assumptions:
+Simple integer list, stored in contigious memory, doesn't exceed size of 100 items. 
 
 Input and Output Examples:
+1. Input: Insert at end (repeat command for each value): 5, 9, 12, 1, 4 
+Print list command output: 5, 9, 12, 1, 4,
+
+2. Input: Insert at index: 2, 3 (should output "Insertion successful")
+Print list command output: 5, 9, 3, 12, 1, 4,
+
+3. Input: Remove at index: 4 (should output "Successful removal.")
+Print list command output: 5, 9, 3, 12, 4,
+
+4. Input: Search: 7 (output: "Value not found.")
+
+5. Input: Search: 4 (output: "Value found at index 4.")
+
+6. Input: Exit (0), output: exit message/end program
